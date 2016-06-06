@@ -6,8 +6,8 @@ var Nav = React.createClass({
 
         <div className="top-bar">
           <div className="top-bar-left">
-            <ul className="dropdown menu" data-dropdown-menu>
-              <li className="menu-text">React Time App</li>
+            <ul className="menu">
+              <li className="menu-text active">React Time App</li>
               <li><a href='#'>Timer</a></li>
               <li><a href='#'>Countdown</a></li>
             </ul>
