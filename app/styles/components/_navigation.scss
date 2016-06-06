@@ -1,0 +1,15 @@
+.top-bar, .top-bar ul {
+  background-color: $nav-background;
+}
+
+// this is the same as .topbar .menu-text {} however we can nest multiple items under top-bar this way
+.top-bar {
+  .menu-text{
+    color: $nav-text-color;
+  }
+
+  .menu> .menu-text > a {
+    display: inline;
+    padding: 0;
+  }
+}
