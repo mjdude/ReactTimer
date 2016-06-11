@@ -1,4 +1,4 @@
-var React = require('react');
+  var React = require('react');
 var ReactDom = require('react-dom');
 var expect = require('expect');
 var $ = require('jquery');
@@ -40,5 +40,30 @@ describe('Countdown', () => {
 
 
       });
+
+      it('should pause countdown on pause status', (done) => {
+          var countdown = TestUtils.renderIntoDocument(<Countdown></Countdown>);
+          countdown.handleSetCountdown(3);
+          countdown.handleStatusChange('paused');
+
+          setTimeout(() => {
+            expect(countdown.state.count).toBe(3);
+          }, 1001);
+          done();
+
+      });
+
+      it('should stop countdown on stopped status', (done) => {
+          var countdown = TestUtils.renderIntoDocument(<Countdown></Countdown>);
+          countdown.handleSetCountdown(3);
+          countdown.handleStatusChange('stopped');
+
+          setTimeout(() => {
+            expect(countdown.state.count).toBe(0);
+          }, 1001);
+          done();
+
+      });
+
     });
 });
